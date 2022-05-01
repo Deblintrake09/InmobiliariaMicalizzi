@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.andresoft.inmobiliariamicalizzi.R;
 import com.andresoft.inmobiliariamicalizzi.modelo.Contrato;
+import com.andresoft.inmobiliariamicalizzi.modelo.Inquilino;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
@@ -62,7 +63,7 @@ public class InquilinoAdapter extends RecyclerView.Adapter<InquilinoAdapter.View
             itemView.setOnClickListener((view)->{
                 Bundle bundle = new Bundle();
                 Contrato contrato = contratos.get(getAdapterPosition());
-                bundle.putSerializable("contrato", contrato);
+                bundle.putSerializable("inquilino", contrato.getInquilino());
                 Navigation.findNavController((Activity) context, R.id.nav_host_fragment_content_main).navigate(R.id.inquilinoFragment, bundle);
             });
 

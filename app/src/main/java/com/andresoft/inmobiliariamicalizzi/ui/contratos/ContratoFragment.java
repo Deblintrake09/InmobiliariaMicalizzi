@@ -3,7 +3,6 @@ package com.andresoft.inmobiliariamicalizzi.ui.contratos;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
