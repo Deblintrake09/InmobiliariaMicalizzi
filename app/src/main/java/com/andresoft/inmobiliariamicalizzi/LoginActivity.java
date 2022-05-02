@@ -25,7 +25,7 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     private Button btLogin;
-    private EditText etUsuario, etContraseña;
+    private EditText etUsuario, etContrasenia;
     private LoginViewModel loginViewModel;
     private SensorManager sensorManager;
     private LeeSensor leeSensor;
@@ -54,11 +54,11 @@ public class LoginActivity extends AppCompatActivity {
     private void inicializarVista(){
         btLogin = findViewById(R.id.btLogin);
         etUsuario = findViewById(R.id.etEmail);
-        etContraseña = findViewById(R.id.etContraseña);
+        etContrasenia = findViewById(R.id.etContrasenia);
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginViewModel.iniciarSesion(etUsuario.getText().toString(), etContraseña.getText().toString());
+                loginViewModel.iniciarSesion(etUsuario.getText().toString(), etContrasenia.getText().toString());
             }
         });
     }
@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         public void onSensorChanged(SensorEvent sensorEvent) {
-            if(flag == 0 && sensorEvent.values[0]>=20 || sensorEvent.values[0]<=-20){
+            if(flag == 0 && sensorEvent.values[0]>=10 || sensorEvent.values[0]<=-10){
                 Uri tel = Uri.parse("tel:2664999999");
                 startActivity(new Intent(Intent.ACTION_CALL, tel));
                 flag=1;
